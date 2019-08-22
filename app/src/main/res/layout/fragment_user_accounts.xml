@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:gravity="center"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintHeight_percent="0.1"
+    android:id="@+id/userEmail"/>
+    <TextView
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    android:gravity="center"
+    app:layout_constraintTop_toBottomOf="@+id/userEmail"
+        app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintHeight_percent="0.2"
+        app:layout_constraintWidth_percent="0.7"
+    android:id="@+id/userWeather"/>
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintTop_toBottomOf="@+id/userEmail"
+        app:layout_constraintHeight_percent="0.2"
+        app:layout_constraintWidth_percent="0.3"
+        app:layout_constraintLeft_toRightOf="@+id/userWeather"
+        android:id="@+id/iconWeather"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewAccounts"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/userWeather"
+        app:layout_constraintHeight_percent="0.7"
+        />
+</android.support.constraint.ConstraintLayout>

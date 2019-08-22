@@ -1,3 +1,13 @@
 <resources>
-    <string name="app_name">todo1test</string>
+    <string name="app_name"  translatable="false">todo1test</string>
+    <string name="error" translatable="false">Error</string>
+    <string name="sign_in">Sign in</string>
+    <string name="password">Password</string>
+    <string name="ok">OK</string>
+    <string name="no_internet_access">No internet access</string>
+    <string name="firebase_password_invalid">The password is invalid or the user does not have a password</string>
+    <string name="balance">Balance</string>
+    <string name="location_permission_needed">The location permission is needed to show the weather</string>
+    <string name="firebase_user_invalid">There is no user record corresponding to this identifier. The user may have been deleted</string>
+    <string name="email" translatable="false">Email</string>
 </resources>

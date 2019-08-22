@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.activities.MainActivity"
+    android:background="@color/grey_300"
+    >
+    <com.jose.herrera.todo1test.view.views.AppTextInputLayout
+        android:layout_width="0dp"
+        android:textColorHint="@android:color/darker_gray"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        app:layout_constraintWidth_percent="0.5"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/nameInputContainer">
+        <com.jose.herrera.todo1test.view.views.AppEditText
+            android:layout_width="match_parent"
+            android:hint="@string/email"
+            android:maxLines="1"
+            android:id="@+id/field_email"
+            android:text="usuario1@mail.com"
+            android:inputType="textEmailAddress"
+            android:imeOptions="flagNoExtractUi|actionNext"
+            android:layout_height="wrap_content"
+            />
+
+    </com.jose.herrera.todo1test.view.views.AppTextInputLayout>
+
+    <com.jose.herrera.todo1test.view.views.AppTextInputLayout
+        android:layout_width="0dp"
+        android:textColorHint="@android:color/darker_gray"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:layout_height="wrap_content"
+        android:id="@+id/passInputContainer"
+        app:layout_constraintWidth_percent="0.5"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/nameInputContainer"
+        >
+        <com.jose.herrera.todo1test.view.views.AppEditText
+            android:layout_width="match_parent"
+            android:hint="@string/password"
+            android:maxLines="1"
+            android:text="usuario1"
+            android:id="@+id/field_password"
+            android:inputType="textPassword"
+            android:imeOptions="flagNoExtractUi|actionDone"
+            android:layout_height="wrap_content"
+            />
+
+    </com.jose.herrera.todo1test.view.views.AppTextInputLayout>
+
+    <Button
+        android:id="@+id/email_sign_in_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/nameInputContainer"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:text="@string/sign_in"
+        android:onClick="onSignInClick"
+        android:theme="@style/ThemeOverlay.MyDarkButton" />
+
+
+</android.support.constraint.ConstraintLayout>
