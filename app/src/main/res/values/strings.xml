@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name"  translatable="false">todo1test</string>
+    <string name="cop"  translatable="false">COP</string>
+    <string name="usd"  translatable="false">USD</string>
     <string name="error" translatable="false">Error</string>
     <string name="sign_in">Sign in</string>
     <string name="amount">Amount</string>

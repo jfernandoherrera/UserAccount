@@ -20,9 +20,10 @@
         app:layout_constraintTop_toBottomOf="@id/from"
         />
     <com.jose.herrera.todo1test.view.views.AppTextInputLayout
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:textColorHint="@android:color/darker_gray"
         app:layout_constraintTop_toBottomOf="@id/to"
+        app:layout_constraintWidth_percent="0.5"
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginBottom="@dimen/activity_minimum_margin"
         android:layout_height="wrap_content"
@@ -37,7 +38,26 @@
             android:layout_height="wrap_content"
             />
     </com.jose.herrera.todo1test.view.views.AppTextInputLayout>
-
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/cop"
+        android:text="@string/cop"
+        android:onClick="onCurrencyClick"
+        app:layout_constraintWidth_percent="0.25"
+        app:layout_constraintTop_toBottomOf="@id/to"
+        app:layout_constraintLeft_toRightOf="@id/amountInputContainer"
+        />
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/usd"
+        android:text="@string/usd"
+        android:onClick="onCurrencyClick"
+        app:layout_constraintWidth_percent="0.25"
+        app:layout_constraintTop_toBottomOf="@id/to"
+        app:layout_constraintLeft_toRightOf="@id/cop"
+        />
     <Button
         android:id="@+id/transferCompleteButton"
         android:layout_width="match_parent"

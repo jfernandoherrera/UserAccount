@@ -18,6 +18,8 @@ import com.jose.herrera.todo1test.R;
 import com.jose.herrera.todo1test.app.AppError;
 import com.jose.herrera.todo1test.model.context.user.UserCompletion;
 import com.jose.herrera.todo1test.model.context.user.UserContext;
+import com.jose.herrera.todo1test.model.context.weather.CurrencyCompletion;
+import com.jose.herrera.todo1test.model.context.weather.CurrencyContext;
 import com.jose.herrera.todo1test.model.context.weather.WeatherCompletion;
 import com.jose.herrera.todo1test.model.context.weather.WeatherContext;
 import com.jose.herrera.todo1test.model.domain.Account;
@@ -38,7 +40,9 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
 
-public class MainActivity extends BaseActivity implements UserCompletion, WeatherCompletion, AccountInteraction {
+public class MainActivity extends BaseActivity implements UserCompletion, WeatherCompletion,
+
+        AccountInteraction, CurrencyCompletion {
 
     private Weather weather;
     private UserContext userContext;
@@ -103,6 +107,18 @@ public class MainActivity extends BaseActivity implements UserCompletion, Weathe
     private Fragment getFragment(String tag) {
 
         return getSupportFragmentManager().findFragmentByTag(tag);
+
+    }
+
+    public void onCurrencyClick(View view) {
+
+        TransferDialog transferDialog = (TransferDialog) getFragment(TRANSFER_DIALOG_TAG);
+
+        if(transferDialog != null) {
+
+            transferDialog.setUSD(! transferDialog.isUSD());
+
+        }
 
     }
 
@@ -346,9 +362,25 @@ public class MainActivity extends BaseActivity implements UserCompletion, Weathe
 
         if(transferDialog != null) {
 
-            userContext.transfer(transferDialog.getAmount(),
+            if(! transferDialog.isUSD()) {
 
-                    transferDialog.getFromAccount(), transferDialog.getToAccount());
+                userContext.transfer(transferDialog.getAmount(),
+
+                        transferDialog.getFromAccount(), transferDialog.getToAccount());
+
+            }else {
+
+                try {
+
+                    CurrencyContext.getCurrency(this, this);
+
+                } catch (NoInternetAccessException e) {
+
+                    showAlert(e.getMessage());
+
+                }
+
+            }
 
         }
 
@@ -375,6 +407,29 @@ public class MainActivity extends BaseActivity implements UserCompletion, Weathe
         if(transferDialog != null) {
 
             transferDialog.dismiss();
+
+        }
+
+    }
+
+    @Override
+    public void onGetDollarToPesosValue(int value, String errorMessage) {
+
+        if(errorMessage == null) {
+
+            TransferDialog transferDialog = (TransferDialog) getFragment(TRANSFER_DIALOG_TAG);
+
+            if (transferDialog != null) {
+
+                userContext.transfer(transferDialog.getAmount() * value,
+
+                        transferDialog.getFromAccount(), transferDialog.getToAccount());
+
+            }
+
+        }else {
+
+            showAlert(errorMessage);
 
         }
 

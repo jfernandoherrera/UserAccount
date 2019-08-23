@@ -6,9 +6,10 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+
 import com.jose.herrera.todo1test.R;
 import com.jose.herrera.todo1test.utils.Utils;
-import com.jose.herrera.todo1test.view.interfaces.AccountInteraction;
 import com.jose.herrera.todo1test.view.views.AppEditText;
 import com.jose.herrera.todo1test.view.views.AppTitleValueTextView;
 import androidx.fragment.app.DialogFragment;
@@ -20,6 +21,9 @@ public class TransferDialog extends DialogFragment {
     private String fromAccount;
     private String toAccount;
     private AppEditText amount;
+    private boolean isUSD;
+    private Button usd;
+    private Button cop;
 
     @Override
     public void onAttach(Context context) {
@@ -53,9 +57,29 @@ public class TransferDialog extends DialogFragment {
 
         amount = rootView.findViewById(R.id.field_amount);
 
+        usd = rootView.findViewById(R.id.usd);
+
+        cop = rootView.findViewById(R.id.cop);
+
         showAccounts();
 
+        showCurrency();
+
         return rootView;
+
+    }
+
+    public void setUSD(boolean USD) {
+
+        isUSD = USD;
+
+        showCurrency();
+
+    }
+
+    public boolean isUSD() {
+
+        return isUSD;
 
     }
 
@@ -69,6 +93,26 @@ public class TransferDialog extends DialogFragment {
 
     }
 
+    private void showCurrency(){
+
+        if(usd != null && cop != null) {
+
+            if(isUSD) {
+
+                usd.setBackgroundColor(getResources().getColor(R.color.colorAccent));
+
+                cop.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+
+            }else{
+
+                cop.setBackgroundColor(getResources().getColor(R.color.colorAccent));
+
+                usd.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+
+            }
+        }
+
+    }
     private void showAccounts() {
 
         if(fromAccount != null && toAccount != null &&

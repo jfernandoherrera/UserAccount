@@ -1,13 +1,9 @@
 package com.jose.herrera.todo1test.model.context.weather.remote;
 
-import android.util.Log;
-
 import com.jose.herrera.todo1test.model.context.weather.WeatherCompletion;
 import com.jose.herrera.todo1test.model.domain.weather.WeatherResponse;
-
 import java.util.HashMap;
 import java.util.Map;
-
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -47,7 +43,7 @@ public class WeatherRemote {
                 }else {
 
                     weatherCompletion.onGetWeather(null, response.message());
-                    Log.e("tww w ", response.message() + " ");
+
                 }
 
             }
@@ -56,7 +52,6 @@ public class WeatherRemote {
             public void onFailure(Call<WeatherResponse> call, Throwable t) {
 
                 weatherCompletion.onGetWeather(null, t.getMessage());
-                Log.e("wewew","fef " + t.getMessage());
 
             }
 
