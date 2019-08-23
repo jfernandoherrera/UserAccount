@@ -9,7 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import com.jose.herrera.todo1test.R;
 import com.jose.herrera.todo1test.model.context.weather.remote.WeatherEndpoints;
-import com.jose.herrera.todo1test.model.domain.Account;
+import com.jose.herrera.todo1test.model.domain.account.Account;
 import com.jose.herrera.todo1test.model.domain.weather.Weather;
 import com.jose.herrera.todo1test.view.adapters.AccountsAdapter;
 import com.jose.herrera.todo1test.view.interfaces.AccountInteraction;

@@ -1,32 +1,28 @@
 package com.jose.herrera.todo1test.model.context.user.firebase;
 
-import android.util.Log;
-
 import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.google.firebase.firestore.Transaction;
 import com.jose.herrera.todo1test.model.context.user.UserCompletion;
-import com.jose.herrera.todo1test.model.domain.Account;
-import com.jose.herrera.todo1test.model.domain.AccountAttributes;
+import com.jose.herrera.todo1test.model.domain.account.Account;
+import com.jose.herrera.todo1test.model.domain.account.AccountAttributes;
 import java.util.ArrayList;
 import java.util.List;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-public class FirebaseRealtimeDataBaseImpl {
+public class FirestoreUserAccountImpl {
 
     private FirebaseFirestore db;
     private UserCompletion userCompletion;
 
-    public FirebaseRealtimeDataBaseImpl(UserCompletion userCompletion) {
+    public FirestoreUserAccountImpl(UserCompletion userCompletion) {
 
         this.userCompletion = userCompletion;
 

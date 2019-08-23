@@ -1,4 +1,4 @@
-package com.jose.herrera.todo1test.model.domain;
+package com.jose.herrera.todo1test.model.domain.account;
 
 public class AccountAttributes {
 

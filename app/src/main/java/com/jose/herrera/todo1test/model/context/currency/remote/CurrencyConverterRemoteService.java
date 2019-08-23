@@ -1,8 +1,6 @@
-package com.jose.herrera.todo1test.model.context.weather.remote;
+package com.jose.herrera.todo1test.model.context.currency.remote;
 
-import com.jose.herrera.todo1test.model.domain.currency.CurrencyEndpoints;
 import com.jose.herrera.todo1test.model.domain.currency.CurrencyResponse;
-import com.jose.herrera.todo1test.model.domain.weather.WeatherResponse;
 
 import java.util.Map;
 

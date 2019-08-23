@@ -1,4 +1,4 @@
-package com.jose.herrera.todo1test.model.context.weather;
+package com.jose.herrera.todo1test.model.context.currency;
 
 public interface CurrencyCompletion {
 

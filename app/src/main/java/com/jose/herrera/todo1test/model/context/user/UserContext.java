@@ -2,16 +2,15 @@ package com.jose.herrera.todo1test.model.context.user;
 
 import android.app.Activity;
 
-import com.jose.herrera.todo1test.model.context.user.firebase.FirebaseRealtimeDataBaseImpl;
+import com.jose.herrera.todo1test.model.context.user.firebase.FirestoreUserAccountImpl;
 import com.jose.herrera.todo1test.model.context.user.firebase.FirebaseUserImpl;
 import com.jose.herrera.todo1test.model.exceptions.NoInternetAccessException;
 import com.jose.herrera.todo1test.utils.Utils;
-import androidx.appcompat.app.AppCompatActivity;
 
 public class UserContext {
 
     private FirebaseUserImpl user;
-    private FirebaseRealtimeDataBaseImpl firebaseRealtimeDataBase;
+    private FirestoreUserAccountImpl firebaseRealtimeDataBase;
     private UserCompletion userCompletion;
 
     public UserContext(UserCompletion userCompletion) {
@@ -20,7 +19,7 @@ public class UserContext {
 
         user = new FirebaseUserImpl();
 
-        firebaseRealtimeDataBase = new FirebaseRealtimeDataBaseImpl(userCompletion);
+        firebaseRealtimeDataBase = new FirestoreUserAccountImpl(userCompletion);
 
     }
 

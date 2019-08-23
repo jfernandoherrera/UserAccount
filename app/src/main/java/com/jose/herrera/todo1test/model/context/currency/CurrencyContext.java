@@ -1,6 +1,6 @@
-package com.jose.herrera.todo1test.model.context.weather;
+package com.jose.herrera.todo1test.model.context.currency;
 
-import com.jose.herrera.todo1test.model.context.weather.remote.CurrencyConverterRemote;
+import com.jose.herrera.todo1test.model.context.currency.remote.CurrencyConverterRemote;
 import com.jose.herrera.todo1test.model.exceptions.NoInternetAccessException;
 import com.jose.herrera.todo1test.utils.Utils;
 

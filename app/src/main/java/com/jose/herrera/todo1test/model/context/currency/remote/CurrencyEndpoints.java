@@ -1,4 +1,4 @@
-package com.jose.herrera.todo1test.model.domain.currency;
+package com.jose.herrera.todo1test.model.context.currency.remote;
 
 public class CurrencyEndpoints {
 

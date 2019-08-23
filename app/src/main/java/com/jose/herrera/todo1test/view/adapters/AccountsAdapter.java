@@ -6,12 +6,10 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 import com.jose.herrera.todo1test.R;
-import com.jose.herrera.todo1test.model.domain.Account;
+import com.jose.herrera.todo1test.model.domain.account.Account;
 import com.jose.herrera.todo1test.view.interfaces.AccountInteraction;
 import com.jose.herrera.todo1test.view.views.AppTitleValueTextView;
-
 import java.util.List;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
