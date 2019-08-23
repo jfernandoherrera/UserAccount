@@ -40,7 +40,13 @@ public class UserContext {
 
     public void getAccounts() {
 
-        firebaseRealtimeDataBase.getAccount();
+        firebaseRealtimeDataBase.getAccount(user.getUid());
+
+    }
+
+    public void getAccounts(String userId) {
+
+        firebaseRealtimeDataBase.getAccount(userId);
 
     }
 
@@ -53,6 +59,12 @@ public class UserContext {
     public String getUserUid() {
 
         return user.getUid();
+
+    }
+
+    public void transfer(int amount, String fromId, String toId) {
+
+        firebaseRealtimeDataBase.transfer(amount, fromId, toId);
 
     }
 

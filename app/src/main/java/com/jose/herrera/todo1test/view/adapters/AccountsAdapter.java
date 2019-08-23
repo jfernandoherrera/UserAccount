@@ -3,9 +3,11 @@ package com.jose.herrera.todo1test.view.adapters;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 import com.jose.herrera.todo1test.R;
 import com.jose.herrera.todo1test.model.domain.Account;
+import com.jose.herrera.todo1test.view.interfaces.AccountInteraction;
 import com.jose.herrera.todo1test.view.views.AppTitleValueTextView;
 
 import java.util.List;
@@ -16,10 +18,12 @@ import androidx.recyclerview.widget.RecyclerView;
 public class AccountsAdapter extends RecyclerView.Adapter {
 
     private List<Account> accountList;
+    private AccountInteraction accountInteraction;
 
-    public AccountsAdapter(List<Account> accountList) {
+    public AccountsAdapter(List<Account> accountList, AccountInteraction accountInteraction) {
 
         this.accountList = accountList;
+        this.accountInteraction = accountInteraction;
 
     }
 
@@ -38,13 +42,35 @@ public class AccountsAdapter extends RecyclerView.Adapter {
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
 
-        Account account = accountList.get(position);
+        final Account account = accountList.get(position);
 
         AccountHolder accountHolder = (AccountHolder) holder;
 
         accountHolder.id.setText(account.getId());
 
         accountHolder.balance.setText(String.valueOf(account.getBalance()));
+
+        accountHolder.generateQr.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
+                accountInteraction.onGenerateQr(account.getId());
+
+            }
+
+        });
+
+        accountHolder.transfer.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
+                accountInteraction.onTransfer(account.getId());
+
+            }
+
+        });
 
     }
 
@@ -60,6 +86,8 @@ public class AccountsAdapter extends RecyclerView.Adapter {
 
         private TextView id;
         private AppTitleValueTextView balance;
+        private Button generateQr;
+        private Button transfer;
 
         private AccountHolder(@NonNull View itemView) {
 
@@ -70,6 +98,10 @@ public class AccountsAdapter extends RecyclerView.Adapter {
             balance = itemView.findViewById(R.id.balance);
 
             balance.setTitle(itemView.getContext().getString(R.string.balance));
+
+            generateQr = itemView.findViewById(R.id.generateQrButton);
+
+            transfer = itemView.findViewById(R.id.transferButton);
 
         }
 

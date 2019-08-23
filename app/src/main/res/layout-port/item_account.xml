@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tool="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/activity_minimum_margin"
+    >
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/activity_minimum_margin"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/accountId"
+            android:gravity="center"
+            android:layout_marginBottom="@dimen/activity_minimum_margin"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+        <com.jose.herrera.todo1test.view.views.AppTitleValueTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/balance"
+            app:layout_constraintTop_toBottomOf="@id/accountId"
+            />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/generate_qr"
+            android:id="@+id/generateQrButton"
+            app:layout_constraintTop_toBottomOf="@id/balance"
+            />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/transfer"
+            android:id="@+id/transferButton"
+            app:layout_constraintTop_toBottomOf="@id/generateQrButton"
+            />
+    </android.support.constraint.ConstraintLayout>
+</androidx.cardview.widget.CardView>

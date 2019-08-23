@@ -11,4 +11,6 @@ public interface UserCompletion {
 
     void onGetUserAccounts(List<Account> accounts, String errorMessage);
 
+    void onTransferCompleted();
+
 }

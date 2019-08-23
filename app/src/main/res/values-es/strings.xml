@@ -3,7 +3,12 @@
     <string name="sign_in">Ingresar</string>
     <string name="password">Contraseña</string>
     <string name="ok">Aceptar</string>
+    <string name="amount">Cantidad</string>
+    <string name="from">Desde</string>
+    <string name="to">Hacia</string>
     <string name="balance">Saldo</string>
+    <string name="generate_qr">Generar QR</string>
+    <string name="transfer">Transferir</string>
     <string name="location_permission_needed">Necesitamos conocer tu ubicación para mostrarte el clima</string>
     <string name="firebase_password_invalid">La contraseña no coincide o el usuario no tiene contraseña</string>
     <string name="firebase_user_invalid">No se encontro usuario con este email. El usuario quizás ha sido eliminado</string>

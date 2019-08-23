@@ -12,6 +12,7 @@ import com.jose.herrera.todo1test.model.context.weather.remote.WeatherEndpoints;
 import com.jose.herrera.todo1test.model.domain.Account;
 import com.jose.herrera.todo1test.model.domain.weather.Weather;
 import com.jose.herrera.todo1test.view.adapters.AccountsAdapter;
+import com.jose.herrera.todo1test.view.interfaces.AccountInteraction;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -58,7 +59,7 @@ public class UserAccountsFragment extends Fragment {
 
         accountsList.setLayoutManager(llm);
 
-        showPosts();
+        showAccounts();
 
         showEmail();
 
@@ -68,11 +69,11 @@ public class UserAccountsFragment extends Fragment {
 
     }
 
-    public void setPosts(List<Account> accounts) {
+    public void setAccounts(List<Account> accounts, AccountInteraction accountInteraction) {
 
-        this.accounts = new AccountsAdapter(accounts);
+        this.accounts = new AccountsAdapter(accounts, accountInteraction);
 
-        this.showPosts();
+        this.showAccounts();
 
     }
 
@@ -116,7 +117,7 @@ public class UserAccountsFragment extends Fragment {
 
     }
 
-    private void showPosts() {
+    public void showAccounts() {
 
         if(accountsList != null) {
 
